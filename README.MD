@@ -1,9 +1,14 @@
 # ComposeExtendedFab
 A floating button which expands to support multiple operations in Jetpack Compose.
 
-![FAB Demo](./image/demo.gif)
+<image src="./image/demo.gif" height="400" />
+
+## Installation
+
+// TODO
 
 ## Usage
+
 ```kotlin
 ...
 import org.king.extendedfab.ui.ExtendedFab
@@ -47,9 +52,6 @@ ExtendedFab(
     )
 }
 ```
-## Installation
-
-// TODO
 
 ## Demo App
 
