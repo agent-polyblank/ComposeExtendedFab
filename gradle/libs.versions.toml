@@ -5,7 +5,6 @@ compose = "1.7.3"
 agp = "8.6.1"
 androidx-activityCompose = "1.9.3"
 androidx-uiTest = "1.7.4"
-
 [libraries]
 
 androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
@@ -18,3 +17,4 @@ multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotl
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }

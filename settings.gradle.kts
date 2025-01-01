@@ -1,4 +1,6 @@
 rootProject.name = "ExtendedFab"
+include("sample:composeApp")
+include(":extendedfab")
 
 pluginManagement {
     repositories {
