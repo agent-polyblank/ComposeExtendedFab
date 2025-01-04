@@ -1,4 +1,4 @@
-package org.king.extendedfab
+package io.github.agentpolyblank.extendefab
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button

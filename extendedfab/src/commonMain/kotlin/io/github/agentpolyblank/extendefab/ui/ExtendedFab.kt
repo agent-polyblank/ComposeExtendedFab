@@ -1,4 +1,4 @@
-package org.king.extendedfab.ui
+package io.github.agentpolyblank.extendefab.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement

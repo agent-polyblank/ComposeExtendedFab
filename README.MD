@@ -1,7 +1,7 @@
 # ComposeExtendedFab
 A floating button which expands to support multiple operations in Jetpack Compose.
 
-<image src="./image/demo.gif" height="600" />
+<image src="./image/demo.gif" height="603" width="288" />
 
 ## Installation
 
@@ -11,8 +11,8 @@ A floating button which expands to support multiple operations in Jetpack Compos
 
 ```kotlin
 // ...
-import org.king.extendedfab.ui.ExtendedFab
-import org.king.extendedfab.ui.ExtendedFabItem
+import io.github.agentpolyblank.extendefab.ui.ExtendedFab
+import io.github.agentpolyblank.extendefab.ui.ExtendedFabItem
 //...
 
 val isExpanded = remember { mutableStateOf(false) }

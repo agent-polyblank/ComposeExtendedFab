@@ -6,6 +6,37 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose)
     alias(libs.plugins.android.library)
+    id("com.vanniktech.maven.publish") version "0.30.0"
+}
+
+mavenPublishing {
+    coordinates("io.github.agentpolyblank", "mylibrary-runtime", "1.0.3-SNAPSHOT")
+
+    pom {
+        name.set("Extended FAB")
+        description.set("A multiplatform extended fab library")
+        inceptionYear.set("2025")
+        url.set("https://github.com/agent-polyblank/ComposeExtendedFab")
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://github.com/agent-polyblank/ComposeExtendedFab/blob/develop/LICENSE.txt")
+                distribution.set("https://github.com/agent-polyblank/ComposeExtendedFab/develop/LICENSE.txt")
+            }
+        }
+        developers {
+            developer {
+                id.set("agent-polyblank")
+                name.set("Sam King")
+                url.set("https://github.com/agent-polyblank")
+            }
+        }
+        scm {
+            url.set("https://github.com/agent-polyblank/ComposeExtendedFab/")
+            connection.set("scm:git:git://github.com/agent-polyblank/ComposeExtendedFab.git")
+            developerConnection.set("scm:git:ssh://git@github.com/agent-polyblank/ComposeExtendedFab.git")
+        }
+    }
 }
 
 kotlin {
@@ -61,7 +92,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.king.extendedfab"
+    namespace = "io.github.agentpolyblank.extendefab"
     compileSdk = 35
     defaultConfig {
         minSdk = 21

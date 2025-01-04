@@ -23,10 +23,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import io.github.agentpolyblank.extendefab.ui.ExtendedFab
+import io.github.agentpolyblank.extendefab.ui.ExtendedFabItem
 import kotlinx.coroutines.isActive
 import org.king.extendedfab.theme.AppTheme
-import org.king.extendedfab.ui.ExtendedFab
-import org.king.extendedfab.ui.ExtendedFabItem
 
 @Composable
 internal fun App() = AppTheme {
