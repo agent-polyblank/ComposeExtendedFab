@@ -1,3 +1,4 @@
+import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 
@@ -10,6 +11,8 @@ plugins {
 }
 
 mavenPublishing {
+    publishToMavenCentral(SonatypeHost.DEFAULT)
+    signAllPublications()
     coordinates("io.github.agentpolyblank", "mylibrary-runtime", "1.0.3-SNAPSHOT")
 
     pom {
