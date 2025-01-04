@@ -72,14 +72,14 @@ kotlin {
 }
 
 android {
-    namespace = "org.king.extendedfab"
+    namespace = "io.github.agentpolyblank.extendefab"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 21
         targetSdk = 35
 
-        applicationId = "org.king.extendedfab.androidApp"
+        applicationId = "io.github.agentpolyblank.extendefab.androidApp"
         versionCode = 1
         versionName = "1.0.0"
 
@@ -110,7 +110,7 @@ compose.desktop {
             }
             macOS {
                 iconFile.set(project.file("desktopAppIcons/MacosIcon.icns"))
-                bundleID = "org.king.extendedfab.desktopApp"
+                bundleID = "io.github.agentpolyblank.extendefab.desktopApp"
             }
         }
     }

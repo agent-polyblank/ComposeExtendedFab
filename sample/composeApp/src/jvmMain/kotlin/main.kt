@@ -4,8 +4,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import io.github.agentpolyblank.extendefab.App
 import java.awt.Dimension
-import org.king.extendedfab.App
 
 fun main() = application {
     Window(
