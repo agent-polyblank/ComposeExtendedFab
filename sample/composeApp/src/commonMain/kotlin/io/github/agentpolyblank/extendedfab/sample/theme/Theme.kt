@@ -1,4 +1,4 @@
-package io.github.agentpolyblank.extendefab.theme
+package io.github.agentpolyblank.extendedfab.sample.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

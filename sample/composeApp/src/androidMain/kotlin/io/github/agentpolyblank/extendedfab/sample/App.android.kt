@@ -1,4 +1,4 @@
-package io.github.agentpolyblank.extendefab
+package io.github.agentpolyblank.extendedfab.sample
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

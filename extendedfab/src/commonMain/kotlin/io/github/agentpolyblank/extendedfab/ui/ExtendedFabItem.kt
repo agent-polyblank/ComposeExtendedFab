@@ -1,4 +1,4 @@
-package io.github.agentpolyblank.extendefab.ui
+package io.github.agentpolyblank.extendedfab.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

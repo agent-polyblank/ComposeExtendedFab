@@ -72,14 +72,14 @@ kotlin {
 }
 
 android {
-    namespace = "io.github.agentpolyblank.extendefab"
+    namespace = "io.github.agentpolyblank.extendedfab.sample"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 21
         targetSdk = 35
 
-        applicationId = "io.github.agentpolyblank.extendefab.androidApp"
+        applicationId = "io.github.agentpolyblank.extendedfab.androidApp"
         versionCode = 1
         versionName = "1.0.0"
 

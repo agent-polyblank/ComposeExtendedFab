@@ -1,4 +1,4 @@
-package io.github.agentpolyblank.extendefab
+package io.github.agentpolyblank.extendedfab.sample
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
@@ -23,10 +23,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.agentpolyblank.extendefab.ui.ExtendedFab
-import io.github.agentpolyblank.extendefab.ui.ExtendedFabItem
+import io.github.agentpolyblank.extendedfab.ui.ExtendedFab
+import io.github.agentpolyblank.extendedfab.ui.ExtendedFabItem
 import kotlinx.coroutines.isActive
-import io.github.agentpolyblank.extendefab.theme.AppTheme
+import io.github.agentpolyblank.extendedfab.sample.theme.AppTheme
 
 @Composable
 internal fun App() = AppTheme {

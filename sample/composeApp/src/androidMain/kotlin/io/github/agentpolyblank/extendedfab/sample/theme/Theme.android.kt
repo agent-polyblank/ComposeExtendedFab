@@ -1,4 +1,4 @@
-package io.github.agentpolyblank.extendefab.theme
+package io.github.agentpolyblank.extendedfab.sample.theme
 
 import android.app.Activity
 import androidx.compose.runtime.Composable
