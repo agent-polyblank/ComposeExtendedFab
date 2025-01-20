@@ -11,13 +11,13 @@ plugins {
 }
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.DEFAULT)
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
-    coordinates("io.github.agentpolyblank", "mylibrary-runtime", "1.0.3-SNAPSHOT")
+    coordinates("io.github.agent-polyblank", "extendedfab", "1.0.0")
 
     pom {
         name.set("Extended FAB")
-        description.set("A multiplatform extended fab library")
+        description.set("A multiplatform extended FAB library")
         inceptionYear.set("2025")
         url.set("https://github.com/agent-polyblank/ComposeExtendedFab")
         licenses {

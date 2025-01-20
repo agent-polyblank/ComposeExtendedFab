@@ -5,7 +5,9 @@ A floating button which expands to support multiple operations in Jetpack Compos
 
 ## Installation
 
-// TODO
+```kotlin
+implementation("io.github.agent-polyblank:extendedfab:1.0.0")
+```
 
 ## Usage
 
