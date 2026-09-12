@@ -7,6 +7,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Settings
@@ -51,9 +52,11 @@ internal fun App() = AppTheme {
             }
         }
     }
+    
     Box(modifier = Modifier.fillMaxSize()) {
         Text(text = "Extended FAB", modifier = Modifier.align(Alignment.Center), fontSize = 32.sp)
         ExtendedFab(
+            modifier = Modifier.align(Alignment.BottomEnd),
             expanded = isExpanded,
             icon = {
                 Icon(
@@ -62,8 +65,9 @@ internal fun App() = AppTheme {
                     modifier = Modifier.size(50.dp).rotate(rotation)
                 )
             },
+            shape = RoundedCornerShape(50),
             onExpandedChange = { expanded ->
-                isExpanded = expanded
+                isExpanded = !isExpanded
             }
             ) {
             ExtendedFabItem(

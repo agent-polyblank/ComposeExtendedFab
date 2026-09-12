@@ -8,17 +8,25 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
+import androidx.compose.material3.FloatingActionButtonElevation
+import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
 
 /**
  * Extended FAB.
  * @param expanded The state of the FAB.
+ * @param onExpandedChange Callback when the FAB expansion state changes.
+ * @param modifier The modifier to be applied to the FAB container.
  * @param shape The shape of the FAB.
+ * @param containerColor The color used for the background of this FAB.
+ * @param contentColor The preferred color for content inside this FAB.
+ * @param elevation [FloatingActionButtonElevation] used to resolve the elevation for this FAB.
  * @param icon The icon to display.
  * @param elements The elements to display when the FAB is expanded.
  */
@@ -26,36 +34,37 @@ import androidx.compose.ui.unit.dp
 fun ExtendedFab(
     expanded: Boolean,
     onExpandedChange: (Boolean) -> Unit,
-    shape: Shape = RoundedCornerShape(50),
+    modifier: Modifier = Modifier,
+    shape: Shape = FloatingActionButtonDefaults.shape,
+    containerColor: Color = FloatingActionButtonDefaults.containerColor,
+    contentColor: Color = contentColorFor(containerColor),
+    elevation: FloatingActionButtonElevation = FloatingActionButtonDefaults.elevation(),
     icon: @Composable () -> Unit,
     elements: @Composable () -> Unit
 ) {
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        contentAlignment = Alignment.BottomEnd
+    Column(
+        modifier = modifier.padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            AnimatedVisibility(visible = expanded) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
-                ) {
-                    elements()
-                }
-            }
-            FloatingActionButton(
-                onClick = {onExpandedChange(expanded) },
-                shape = shape,
+        AnimatedVisibility(visible = expanded) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                Box(modifier = Modifier.padding(10.dp)) {
-                    icon()
-                }
+                elements()
+            }
+        }
+        FloatingActionButton(
+            onClick = { onExpandedChange(!expanded) },
+            shape = shape,
+            containerColor = containerColor,
+            contentColor = contentColor,
+            elevation = elevation
+        ) {
+            Box(modifier = Modifier.padding(10.dp)) {
+                icon()
             }
         }
     }
