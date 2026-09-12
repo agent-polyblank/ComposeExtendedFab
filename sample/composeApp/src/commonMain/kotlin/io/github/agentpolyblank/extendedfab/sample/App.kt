@@ -18,6 +18,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -30,9 +31,9 @@ import io.github.agentpolyblank.extendedfab.sample.theme.AppTheme
 
 @Composable
 internal fun App() = AppTheme {
-    val isExpanded = remember { mutableStateOf(false) }
+    var isExpanded by remember { mutableStateOf(false) }
 
-    val rotation by animateFloatAsState(if (isExpanded.value) 360f else 0f)
+    val rotation by animateFloatAsState(if (isExpanded) 360f else 0f)
 
     val isRotating by remember { mutableStateOf(false) }
 
@@ -53,7 +54,7 @@ internal fun App() = AppTheme {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(text = "Extended FAB", modifier = Modifier.align(Alignment.Center), fontSize = 32.sp)
         ExtendedFab(
-            isExpanded = isExpanded,
+            expanded = isExpanded,
             icon = {
                 Icon(
                     imageVector = Icons.Default.Settings,
@@ -61,7 +62,9 @@ internal fun App() = AppTheme {
                     modifier = Modifier.size(50.dp).rotate(rotation)
                 )
             },
-
+            onExpandedChange = { expanded ->
+                isExpanded = expanded
+            }
             ) {
             ExtendedFabItem(
                 icon = {

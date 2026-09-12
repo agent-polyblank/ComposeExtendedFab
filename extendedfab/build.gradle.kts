@@ -1,5 +1,9 @@
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class, ExperimentalWasmDsl::class)
+
 import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.compose.ExperimentalComposeLibrary
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 
 plugins {
@@ -13,7 +17,7 @@ plugins {
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
-    coordinates("io.github.agent-polyblank", "extendedfab", "1.0.0")
+    coordinates("io.github.agent-polyblank", "extendedfab", "1.1.0")
 
     pom {
         name.set("Extended FAB")
@@ -43,10 +47,15 @@ mavenPublishing {
 }
 
 kotlin {
-    jvmToolchain(23)
+    jvmToolchain(21)
     androidTarget {
         //https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-test.html
         instrumentedTestVariant.sourceSetTree.set(KotlinSourceSetTree.test)
+    }
+
+    js(IR) {
+        browser()
+        binaries.executable()
     }
 
     jvm()
@@ -55,6 +64,7 @@ kotlin {
         browser()
         binaries.executable()
     }
+
 
     listOf(
         iosX64(),

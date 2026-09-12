@@ -17,14 +17,15 @@ import androidx.compose.ui.unit.dp
 
 /**
  * Extended FAB.
- * @param isExpanded The state of the FAB.
+ * @param expanded The state of the FAB.
  * @param shape The shape of the FAB.
  * @param icon The icon to display.
  * @param elements The elements to display when the FAB is expanded.
  */
 @Composable
 fun ExtendedFab(
-    isExpanded: MutableState<Boolean>,
+    expanded: Boolean,
+    onExpandedChange: (Boolean) -> Unit,
     shape: Shape = RoundedCornerShape(50),
     icon: @Composable () -> Unit,
     elements: @Composable () -> Unit
@@ -40,7 +41,7 @@ fun ExtendedFab(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            AnimatedVisibility(visible = isExpanded.value) {
+            AnimatedVisibility(visible = expanded) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -49,7 +50,7 @@ fun ExtendedFab(
                 }
             }
             FloatingActionButton(
-                onClick = { isExpanded.value = !isExpanded.value },
+                onClick = {onExpandedChange(expanded) },
                 shape = shape,
             ) {
                 Box(modifier = Modifier.padding(10.dp)) {
